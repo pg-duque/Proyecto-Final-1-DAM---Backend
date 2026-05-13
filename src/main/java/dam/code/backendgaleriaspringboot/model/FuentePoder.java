@@ -1,5 +1,6 @@
 package dam.code.backendgaleriaspringboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class FuentePoder {
     private String nombre;
 
     @OneToMany(mappedBy = "fuentePoder", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("fuentePoder")
     private List<Clase> clases = new ArrayList<>();
 
     public FuentePoder(Long id, String nombre) {

@@ -1,5 +1,6 @@
 package dam.code.backendgaleriaspringboot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,7 @@ public class Clase {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "fuente_poder_id",  nullable = false) // Nombre de la columna FK en la DB
+    @JsonIgnoreProperties("clases")
     private FuentePoder fuentePoder;
 
     public Clase(String nombre, String descripcion, FuentePoder fuentePoder) {
