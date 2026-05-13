@@ -14,11 +14,14 @@ public class FuentePoderController {
 
     @Autowired
     private FuentePoderRepository fuentePoderRepository;
+
+    //OBTENEMOS TODAS LAS FUENTES
     @GetMapping
     public List<FuentePoder> listarTodas() {
         return fuentePoderRepository.findAll();
     }
 
+    //CREAR UNA FUENTE DE PODER
     @PostMapping
     public FuentePoder crear(@RequestBody FuentePoder fuentePoder) {
         return fuentePoderRepository.save(fuentePoder);

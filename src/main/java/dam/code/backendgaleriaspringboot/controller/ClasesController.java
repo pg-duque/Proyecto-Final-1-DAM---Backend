@@ -16,26 +16,26 @@ public class ClasesController {
     @Autowired
     private ClaseRepository claseRepository; // Inyectamos el repositorio
 
-    // OBTENER TODAS
+    //OBTENER TODAS LAS CLASES
     @GetMapping
     public List<Clase> datosClases() {
         return claseRepository.findAll(); // Busca en Postgres
     }
 
-    // INSERTAR
+    // INSERTAR CLASES
     @PostMapping
     public Clase insertarClase(@RequestBody Clase clase) {
         return claseRepository.save(clase); // Guarda en Postgres
     }
 
-    // BORRAR POR NOMBRE
+    // BORRAR CLASE POR NOMBRE
     @DeleteMapping("/{nombre}")
     @Transactional // Obligatorio para borrar por un campo que no sea ID
     public void borrarClase(@PathVariable String nombre) {
         claseRepository.deleteByNombre(nombre);
     }
 
-    // ACTUALIZAR POR NOMBRE
+    // ACTUALIZAR CLASE POR NOMBRE
     @PutMapping("/{nombre}")
     @Transactional
     public Clase actualizarClase(@RequestBody Clase claseActualizada, @PathVariable String nombre) {
