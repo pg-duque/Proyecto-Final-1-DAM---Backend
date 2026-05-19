@@ -44,7 +44,9 @@ public class ClasesController {
                 .orElseThrow(() -> new RuntimeException("Clase no encontrada: " + nombre));
 
         claseExistente.setDescripcion(claseActualizada.getDescripcion());
+        claseExistente.setDescripcionExtendida(claseActualizada.getDescripcionExtendida());
         // Al estar en una transacción, se guarda automáticamente al terminar el método
+
         return claseExistente;
     }
 }
