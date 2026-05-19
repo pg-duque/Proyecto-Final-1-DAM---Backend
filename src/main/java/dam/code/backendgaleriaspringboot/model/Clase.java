@@ -30,10 +30,13 @@ public class Clase {
     @JsonIgnoreProperties("clases")
     private FuentePoder fuentePoder;
 
-    public Clase(String nombre, String descripcion, String descripcionExtendida, FuentePoder fuentePoder) {
+    private String imagenUrl;
+
+    public Clase(String nombre, String descripcion, String descripcionExtendida, String imagenUrl, FuentePoder fuentePoder) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.descripcionExtendida = descripcionExtendida;
+        this.imagenUrl = imagenUrl;
         this.fuentePoder = fuentePoder;
     }
 
